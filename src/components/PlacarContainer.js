@@ -24,13 +24,16 @@ export default class PlacarContainer extends React.Component {
     }
     
     render() {
+        const {partida, casa, visitante} = this.props;
+        //const partidasProps = this.props.partida;
+
         return(
             <div className="placar">
-                <Time nome={this.props.casa.nome} gols={this.state.gols_casa} marcarGol={this.marcarGolCasa.bind(this)} />
+                <Time nome={casa.nome} gols={this.state.gols_casa} marcarGol={this.marcarGolCasa.bind(this)} />
 
-                <Partida estadio={this.props.partida.estadio} data={this.props.partida.data} horario={this.props.partida.horario} />
+                <Partida {...partida} />
 
-                <Time nome={this.props.visitante.nome} gols={this.state.gols_visitante} marcarGol={this.marcarGolVisitante.bind(this)} />
+                <Time nome={visitante.nome} gols={this.state.gols_visitante} marcarGol={this.marcarGolVisitante.bind(this)} />
             </div>
         );
     }
