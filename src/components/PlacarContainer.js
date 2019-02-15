@@ -40,3 +40,4 @@ export default class PlacarContainer extends React.Component {
 }
 
 PlacarContainer.propTypes = {}
+PlacarContainer.defaultProps = {}
